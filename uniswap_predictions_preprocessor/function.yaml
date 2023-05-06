@@ -1,7 +1,3 @@
+---
 name: uniswap_preprocessor
 namespace: eth
-query: |
-  SELECT *
-  FROM eth.recent_blocks
-  ORDER BY number DESC
-  LIMIT 5
