@@ -1,4 +1,0 @@
-CREATE TABLE IF NOT EXISTS demo (
-  name VARCHAR,
-  id INT
-)
