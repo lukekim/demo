@@ -2,3 +2,6 @@ name: uniswap_swaps_eth_usdc
 migrations:
   - name: create_table
     path: migrations/create_table.sql
+  - name: add_index
+    sql: |
+      CREATE INDEX ON uniswap_swaps_eth_usdc (timestamp);
