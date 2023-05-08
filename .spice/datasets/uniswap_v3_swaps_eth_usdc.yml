@@ -1,13 +1,13 @@
-name: uniswap_swaps_eth_usdc
+name: tim_uniswap_swaps_eth_usdc
 migrations:
   - name: create_table
     sql: |
-      CREATE TABLE IF NOT EXISTS demo (
-        name VARCHAR,
-        id INT
+      CREATE TABLE IF NOT EXISTS tim_demo (
+        ts INT,
+        y FLOAT
       )
   - name: create_view
     sql: |
-      CREATE VIEW demo_view AS (
-        SELECT * FROM demo
+      CREATE VIEW tim_demo_view AS (
+        SELECT * FROM tim_demo
       )
