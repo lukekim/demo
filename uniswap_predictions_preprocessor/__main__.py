@@ -37,6 +37,7 @@ pad_df = pd.DataFrame(data={"ts": np.arange(df["ts"].min(), df["ts"].max() + 1)}
 df = df.merge(pad_df, how="right", on="ts")
 df.sort_values("ts", inplace=True, ignore_index=True)
 df = df.interpolate(method="pad")
+df = df.set_index('ts')
 
 df.to_csv(OUTPUT_DIR / "results.csv")
 print(f"you did it! {len(df)}")
