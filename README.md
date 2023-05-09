@@ -27,20 +27,23 @@ Start bacalhau
 make bacalhau-devstack
 ```
 
-
-Grab first part of `BACALHAU_IPFS_SWARM_ADDRESSES` separated by `,`, do
+Copy and paste the `export ...` lines from above and paste them into a new terminal then run:
 ```
-ipfs swarm connect ABOVE_ADDRESS
+echo $BACALHAU_IPFS_SWARM_ADDRESSES | cut -d, -f1 | xargs -r ipfs swarm connect
 ```
 
+Pull down the docker image so that the bacalhau run is fast
+```
+make pull-image
+```
 
-First time may takes bit longer
+Run the job
 ```
 export SPICE_API_KEY='xxx'
-make pull-image
 make local-harness
 ```
 
+View the outputs
 ```
 make ls-outputs id=xxx
 make get-result id=xxx
