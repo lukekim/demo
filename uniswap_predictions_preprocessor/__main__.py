@@ -39,7 +39,7 @@ df = df.set_index('ts')
 df.to_csv(OUTPUT_DIR / "results.csv")
 
 # Read the content of the .csv file
-with open(OUTPUT_FILE, "r") as file:
+with open(OUTPUT_DIR / "results.csv", "r") as file:
     content = file.read()
 
 # Print the content of the .csv file to stdout
