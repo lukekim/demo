@@ -8,6 +8,6 @@ migrations:
       )
   - name: create_view
     sql: |
-      CREATE VIEW tim_demo_view AS (
+      CREATE OR REPLACE VIEW tim_demo_view AS (
         SELECT * FROM tim_demo
       )
