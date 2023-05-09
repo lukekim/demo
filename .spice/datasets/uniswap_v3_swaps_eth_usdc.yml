@@ -8,6 +8,6 @@ migrations:
       )
   - name: create_view
     sql: |
-      CREATE OR REPLACE VIEW uniswap_preprocessor AS (
+      CREATE VIEW uniswap_preprocessor AS (
         SELECT * FROM uniswap_preprocessor
       )
