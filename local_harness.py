@@ -28,7 +28,7 @@ variables = {
   'input_cid': input_cid,
   'flight_address': 'grpc+tls://flight.spiceai.io',
   'query_variables': json.dumps({
-    'block_number': 17216108, #17196976,
+    #'block_number': 17216108, # leave out for latest (specific to our test app -- prod will always provide this var)
   }),
 }
 with open(os.path.join(os.path.dirname(__file__), 'local-job.yaml.tpl'), 'r', encoding='utf8') as f:

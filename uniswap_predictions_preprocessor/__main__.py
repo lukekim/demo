@@ -12,9 +12,8 @@ import os
 # - QUERY_VARIABLES: a dictionary of available variables for running our queries
 # - OUTPUT_DIR: where to write our results that can either be written as a .sql or .parquet file
 
-#with open(os.path.join(os.path.dirname(__file__), 'uniswap_event_swaps.sql.tpl'), 'r', encoding='utf8') as f:
-#    query_template = Template(f.read())
-query_template = Template(__loader__.get_data("uniswap_event_swaps.sql.tpl").decode("utf8"))
+template_filename = 'uniswap_event_swaps.sql.tpl' if QUERY_VARIABLES.get('block_number') else 'uniswap_event_swaps_latest.sql.tpl'
+query_template = Template(__loader__.get_data(template_filename).decode("utf8"))
 query = query_template.substitute(QUERY_VARIABLES)
 try:
     reader = SPICE_CLIENT.query(query)
