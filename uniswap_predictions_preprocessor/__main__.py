@@ -13,6 +13,7 @@ import os
 # - OUTPUT_DIR: where to write our results that can either be written as a .sql or .parquet file
 
 template_filename = 'uniswap_event_swaps.sql.tpl' if QUERY_VARIABLES.get('block_number') else 'uniswap_event_swaps_latest.sql.tpl'
+template_filename = os.path.join(os.path.dirname(__file__), template_filename)
 query_template = Template(__loader__.get_data(template_filename).decode("utf8"))
 query = query_template.substitute(QUERY_VARIABLES)
 try:
