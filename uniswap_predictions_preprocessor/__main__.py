@@ -28,7 +28,7 @@ if len(df) == 0:
     sys.exit(0)
 
 df["y"] = df["y"].astype(np.float32)
-df = df.groupby(by=["ts"]).mean()
+df = df.groupby(by=["ts"]).mean().reset_index()
 df.sort_values("ts", inplace=True)
 pad_df = pd.DataFrame(data={"ts": np.arange(df["ts"].min(), df["ts"].max() + 1)})
 df = df.merge(pad_df, how="right", on="ts")
