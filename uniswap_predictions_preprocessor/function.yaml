@@ -1,3 +1,4 @@
 ---
-dataset: uniswap_preprocessor
-namespace: eth
+output_dataset: uniswap_eth
+triggers:
+  - path: eth
