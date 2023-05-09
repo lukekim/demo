@@ -41,4 +41,12 @@ df = df.interpolate(method="pad")
 df = df.set_index('ts')
 
 df.to_csv(OUTPUT_DIR / "results.csv")
-print(f"you did it! {len(df)}")
+
+# Read the content of the .csv file
+with open(OUTPUT_FILE, "r") as file:
+    content = file.read()
+
+# Print the content of the .csv file to stdout
+print(content)
+
+print(f"done! {len(df)}")
