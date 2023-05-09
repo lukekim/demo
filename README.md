@@ -17,13 +17,16 @@ Merges to `main` will automatically be deployed.
 
 ## How to run local dev loop (simplified version)
 
+Start ipfs
 ```
 make ipfs-fresh-daemon
 ```
 
+Start bacalhau
 ```
-make bacalau-devstack
+make bacalhau-devstack
 ```
+
 
 Grab first part of `BACALHAU_IPFS_SWARM_ADDRESSES` separated by `,`, do
 ```
@@ -31,6 +34,7 @@ ipfs swarm connect ABOVE_ADDRESS
 ```
 
 
+First time may takes bit longer
 ```
 export SPICE_API_KEY='xxx'
 make local-harness

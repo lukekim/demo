@@ -7,7 +7,7 @@ ipfs-fresh-daemon:
 	ipfs bootstrap rm --all
 	ipfs daemon
 
-bacalau-devstack:
+bacalhau-devstack:
 	PREDICTABLE_API_PORT=1 bacalhau devstack --job-selection-accept-networked
 
 local-harness:
