@@ -37,6 +37,7 @@ ipfs swarm connect ABOVE_ADDRESS
 First time may takes bit longer
 ```
 export SPICE_API_KEY='xxx'
+make pull-image
 make local-harness
 ```
 
