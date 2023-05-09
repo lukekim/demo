@@ -20,3 +20,8 @@ ls-outputs:
 get-result:
 	$(eval cid=$(shell bacalhau describe $(id) | grep -A2 PublishedResults | grep CID | cut -d ":" -f 2 | xargs))
 	@ipfs cat $(cid)/outputs/results.csv
+
+pull-image:
+	docker pull ghcr.io/cod-demo/bacalhau_runner:m1
+
+.PHONY: ipfs-fresh-daemon bacalhau-devstack local-harness ls-outputs get-result pull-image
