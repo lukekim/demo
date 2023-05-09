@@ -1,5 +1,5 @@
-select block_number, amount0, amount1
-from eth.uniswap_v3.recent_event_swaps
-where address = '0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640'
+select last_block_timestamp as ts, reserve0 / reserve1 as y
+from eth.uniswap_v2.pool_stats
+where pool_address = '0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc'
 order by block_number desc
 limit 1
