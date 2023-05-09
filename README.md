@@ -30,7 +30,9 @@ Grab first part of `BACALHAU_IPFS_SWARM_ADDRESSES` separated by `,`, do
 ipfs swarm connect ABOVE_ADDRESS
 ```
 
+
 ```
+export SPICE_API_KEY='xxx'
 make local-harness
 ```
 
