@@ -1,4 +1,4 @@
-name: uniswap_v3_eth_usdc
+name: uniswap_v2_eth_usdc
 migrations:
   - name: create_table
     sql: |
