@@ -2,6 +2,7 @@ export BACALHAU_API_HOST=0.0.0.0
 export BACALHAU_API_PORT=20000
 
 ipfs-fresh-daemon:
+	killall ipfs || true
 	rm -rf ~/.ipfs
 	ipfs init
 	ipfs bootstrap rm --all
