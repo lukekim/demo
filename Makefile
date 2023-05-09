@@ -9,6 +9,7 @@ ipfs-fresh-daemon:
 	ipfs daemon
 
 bacalhau-devstack:
+	killall bacalhau || true
 	PREDICTABLE_API_PORT=1 bacalhau devstack --job-selection-accept-networked
 
 local-harness:
