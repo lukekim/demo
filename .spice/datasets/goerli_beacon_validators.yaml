@@ -1,4 +1,4 @@
-name: goerli.beacon_validators
+name: goerli.beacon.validators
 type: overwrite
 firecache:
   enabled: true
