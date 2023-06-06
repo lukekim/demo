@@ -1,4 +1,5 @@
 name: uniswap_v2_eth_usdc
+type: overwrite
 migrations:
   - name: create_table
     sql: |
