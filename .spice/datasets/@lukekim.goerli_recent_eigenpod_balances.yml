@@ -1,4 +1,4 @@
-name: "@lukekim.goerli_eigenpod_balances"
+name: "@lukekim.goerli_recent_eigenpod_balances"
 type: append
 firecache:
   enabled: true
