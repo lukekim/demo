@@ -1,4 +1,4 @@
-name: goerli.eigenlayer.recent_eigenpod_balances
+name: eth.eigenlayer.eigenpod_balances
 type: append
 firecache:
   enabled: true
