@@ -1,0 +1,6 @@
+name: goerli.beacon.validators
+type: overwrite
+firecache:
+  enabled: true
+  trigger: block_number
+  time_column: timestamp

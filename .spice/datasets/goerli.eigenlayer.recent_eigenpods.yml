@@ -1,0 +1,6 @@
+name: 'goerli.eigenlayer.recent_eigenpods'
+type: overwrite
+firecache:
+  enabled: true
+  trigger: block_number
+  time_column: block_timestamp

@@ -1,0 +1,6 @@
+name: eth.eigenlayer.withdrawal_router_claimed
+type: overwrite
+firecache:
+  enabled: true
+  trigger: block_number
+  time_column: block_timestamp
