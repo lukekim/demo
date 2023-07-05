@@ -1,0 +1,6 @@
+name: goerli.eigenlayer.recent_beacon_bls_to_execution_change
+type: append
+firecache:
+  enabled: true
+  trigger: block_slot
+  time_column: block_timestamp
