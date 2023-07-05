@@ -1,6 +1,0 @@
-name: goerli.beacon.recent_bls_to_execution_change
-type: append
-firecache:
-  enabled: true
-  trigger: block_slot
-  time_column: block_timestamp
