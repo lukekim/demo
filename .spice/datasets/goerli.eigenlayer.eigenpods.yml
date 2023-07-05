@@ -1,4 +1,4 @@
-name: 'goerli.eigenlayer.recent_eigenpods'
+name: goerli.eigenlayer.eigenpods
 type: overwrite
 firecache:
   enabled: true
