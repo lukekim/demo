@@ -1,0 +1,9 @@
+name: eigenpod_creation_counter
+type: append
+migrations:
+  - name: create_table
+    sql: |
+      CREATE TABLE IF NOT EXISTS eigenpod_creation_counter (
+        block_number BIGINT PRIMARY KEY,
+        eigenpods_created BIGINT
+      )
