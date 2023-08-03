@@ -3,12 +3,12 @@ type: append
 migrations:
   - name: create_table
     sql: |
-      CREATE TABLE IF NOT EXISTS uniswap_eth (
+      CREATE TABLE IF NOT EXISTS uniswap_v2_eth_usdc (
         ts INT,
         y FLOAT
       )
   - name: create_view
     sql: |
-      CREATE VIEW uniswap_eth AS (
-        SELECT * FROM uniswap_eth
+      CREATE VIEW uniswap_v2_eth_usdc AS (
+        SELECT * FROM uniswap_v2_eth_usdc
       )
