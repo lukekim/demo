@@ -1,5 +1,5 @@
 name: uniswap_v2_eth_usdc
-type: output
+type: append
 migrations:
   - name: create_table
     sql: |
