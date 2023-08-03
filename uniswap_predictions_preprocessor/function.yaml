@@ -1,4 +1,4 @@
 ---
-output_dataset: uniswap_eth
+output_dataset: uniswap_v2_eth_usdc
 triggers:
   - path: eth
