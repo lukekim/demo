@@ -3,7 +3,7 @@ type: append
 migrations:
   - name: create_table
     sql: |
-      CREATE TABLE IF NOT EXISTS phillipleblanc.demo.uniswap_v2_eth_usdc (
+      CREATE TABLE IF NOT EXISTS lukekim.demo.uniswap_v2_eth_usdc (
         ts INT,
         y FLOAT
       )
