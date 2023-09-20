@@ -25,12 +25,6 @@ def process(context: dict, duckdb: duckdb.DuckDBPyConnection, spice_client: Clie
   # Update the accumulator
   duckdb.sql(f"UPDATE seen_eigenpods SET num = {new_total_eigenpods}")
 
-  # Temporary step
-  duckdb.sql("""CREATE TABLE IF NOT EXISTS output.eigenpod_creation_counter (
-                block_number BIGINT,
-                eigenpods_created BIGINT
-                )""")
-  
   duckdb.sql(f"INSERT INTO output.eigenpod_creation_counter VALUES ({context['block_number']}, {new_total_eigenpods})")
 
   print("done!")
