@@ -3,7 +3,7 @@ type: view
 migrations:
   - name: create_view
     sql: |
-      CREATE OR REPLACE VIEW lukekim.demo.usdc_transfers AS
+      CREATE OR REPLACE VIEW lukekim.demo.eth_usdc_transfers AS
       SELECT from_address, 
              to_address, 
              "value" / 1e6 as usd_transferred, 
