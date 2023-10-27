@@ -1,5 +1,8 @@
 name: lukekim.demo.eth_usdc_transfers
 type: view
+access:
+  read:
+    - '*'
 migrations:
   - name: create_view
     sql: |
