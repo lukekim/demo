@@ -1,5 +1,5 @@
 family: gas_fees
-name: v0.1
+name: v0.1-firecace
 model_type: gasfees_v1
 handler: gas_fees.py
 training_entry_point: gas_fees.train
@@ -9,5 +9,5 @@ inference_query: 'SELECT number as "ts", CAST(base_fee_per_gas / 1000000000.0 AS
 lookback_size: 30
 forecast_size: 1
 metadata:
-  firecache: false
+  firecache: true
   covariate: true
