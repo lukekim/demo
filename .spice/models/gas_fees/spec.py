@@ -9,6 +9,9 @@ class TrainParams:
     forecast_size: int
     epochs: int
     metadata: Optional[dict]
+    runtime: str
+    compiled_package_cid: str
+    train_handler: str
 
 @dataclass
 class TrainResponse:
