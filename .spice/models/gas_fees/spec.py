@@ -27,13 +27,17 @@ class InferencePoint:
 
 @dataclass
 class InferenceParams:
-    model_id: str
     lookback: list[InferencePoint]
     model_weights_cid: str
     model_weights_name: str
     lookback_size: int
     forecast_size: int
+    runtime: str
+    compiled_package_cid: str
+    inference_handler: str
     metadata: Optional[dict] = None
+    job_id: str = ""
+    model_type: str = ""
 
 @dataclass
 class InferenceResponse:
@@ -72,4 +76,3 @@ ReportItem = HtmlReportItem | PlotlyReportItem
 @dataclass
 class Report:
     items: list[ReportItem]
-
