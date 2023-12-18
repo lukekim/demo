@@ -1,6 +1,6 @@
 family: gas_fees
 name: v0.1
-model_type: xgb_gasfees
+type: xgb_gasfees
 
 epochs: 10
 
