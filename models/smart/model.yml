@@ -7,12 +7,12 @@ epochs: 5
 normalizing:
   entry_point: "normalize:noop"
 training:
-  sql: SELECT cast(ts as TIMESTAMP) as ts, y, smart_9_raw, smart_12_raw, smart_194_raw, serial_number FROM testmluploads.samples."failures_data.parquet"
+  sql: SELECT cast(ts as TIMESTAMP) as ts, life_percent as y, smart_9_raw, smart_12_raw, smart_194_raw, serial_number FROM spiceai.datasets.smart_failures
 inferencing:
   sql: |
     SELECT
       cast(ts as BIGINT) as ts, CAST(0.0 as double) as y, smart_9_raw, smart_12_raw, smart_194_raw, serial_number
-    FROM testmluploads.samples."failures_data.parquet"
+    FROM spiceai.datasets.smart_failures
     WHERE serial_number='Z305BHVV' 
   lookback_size: 4
   forecast_size: 1
