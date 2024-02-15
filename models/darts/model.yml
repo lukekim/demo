@@ -1,0 +1,40 @@
+family: exchange_rate
+name: Exchange rate pair
+type: darts_exchange_pair
+
+epochs: 2
+
+normalizing:
+  entry_point: "normalize:noop"
+training:
+  sql: |
+    SELECT ts, CAST(y as DOUBLE) AS y, CAST(y2 as DOUBLE) as covariate
+    FROM (
+        SELECT
+            ROW_NUMBER() OVER (ORDER BY a.number) AS ts,
+            2 * ROW_NUMBER() OVER (ORDER BY a.number) + 50 AS y,
+            -3 * ROW_NUMBER() OVER (ORDER BY a.number) + 1 AS y2
+        FROM
+            btc.blocks a
+        LIMIT 10000
+    ) nested_0;
+inferencing:
+  sql: |
+    SELECT ts, CAST(y as DOUBLE) AS y, CAST(y2 as DOUBLE) as y2
+    FROM (
+          SELECT
+              ROW_NUMBER() OVER (ORDER BY a.number) AS ts,
+              2 * ROW_NUMBER() OVER (ORDER BY a.number) + 50 AS y,
+              -3 * ROW_NUMBER() OVER (ORDER BY a.number) + 1 AS y2
+          FROM
+              btc.blocks a
+          ORDER BY ts DESC
+          LIMIT 50
+    ) nested_0;
+  lookback_size: 10
+  forecast_size: 1
+metadata:
+  covariate: true
+  model:
+    model_type: NBEATSModel
+    parameters: {}
