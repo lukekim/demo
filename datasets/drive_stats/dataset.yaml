@@ -1,0 +1,16 @@
+name: lukekim.demo.drive_stats
+type: append
+migrations:
+  - name: create_table
+    sql: |
+      CREATE TABLE IF NOT EXISTS "lukekim".demo.drive_stats (
+        value BIGINT,
+        time_unix_nano BIGINT,
+        start_time_unix_nano BIGINT,
+        model TEXT,
+        name TEXT,
+        serial_no TEXT,
+        device TEXT,
+        host TEXT,
+        id TEXT
+      )

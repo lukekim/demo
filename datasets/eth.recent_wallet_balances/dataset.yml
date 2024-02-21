@@ -1,0 +1,6 @@
+name: eth.recent_wallet_balances
+type: append
+firecache:
+  enabled: true
+  trigger: block_number
+  time_column: block_timestamp

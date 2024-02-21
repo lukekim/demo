@@ -1,0 +1,9 @@
+name: lukekim.demo.uniswap_v2_eth_usdc
+type: append
+migrations:
+  - name: create_table
+    sql: |
+      CREATE TABLE IF NOT EXISTS lukekim.demo.uniswap_v2_eth_usdc (
+        ts INT,
+        y FLOAT
+      )
