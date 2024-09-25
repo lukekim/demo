@@ -1,0 +1,8 @@
+name: demo
+kind: Spicepod
+version: v1beta1
+datasets:
+  - from: s3://spiceai-demo-datasets/taxi_trips/2024/
+    name: taxi_trips
+    params:
+      file_format: parquet
