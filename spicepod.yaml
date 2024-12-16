@@ -30,7 +30,7 @@ evals:
       Evaluates how well a model can copy the exact answers already returned to a user. Useful for testing if a smaller/cheaper model is sufficient.
     dataset: user_queries
     scorers:
-      - match:
+      - match
 
 models:
   - name: gpt-4o
