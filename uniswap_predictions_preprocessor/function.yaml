@@ -1,8 +1,0 @@
-output_datasets: 
-  - lukekim.demo.uniswap_v2_eth_usdc
-triggers:
-  - path: eth
-runtime: python3.11
-# For Python, handler is [script_name].[method]
-# The below will invoke a method `process` in a file `spice_function.py`.
-handler: spice_function.process

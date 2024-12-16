@@ -1,6 +1,0 @@
-output_datasets: 
-  - lukekim.demo.eigenpod_creation_counter
-triggers:
-  - path: eth
-runtime: python3.11
-handler: spice_function.process
