@@ -23,6 +23,23 @@ views:
         json_get_str((captured_output -> 0), 'content') as ideal
       FROM runtime.task_history
       WHERE task='ai_completion'
+  - name: model_stats
+    sql: |
+      WITH latest_runs AS (
+        SELECT model, MAX(created_at) as latest_run
+        FROM eval.runs
+        WHERE dataset = 'user_queries'
+        GROUP BY model
+      )
+      SELECT 
+        r.model,
+        COUNT(*) as total_queries,
+        SUM(CASE WHEN res.value = 1.0 THEN 1 ELSE 0 END) as correct_answers,
+        AVG(res.value) as accuracy
+      FROM eval.runs r
+      JOIN latest_runs lr ON r.model = lr.model AND r.created_at = lr.latest_run
+      JOIN eval.results res ON res.run_id = r.id
+      GROUP BY r.model
 
 evals:
   - name: mimic-user-queries

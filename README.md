@@ -156,6 +156,23 @@ dependencies:
            json_get_str((captured_output -> 0), 'content') as ideal
          FROM runtime.task_history
          WHERE task='ai_completion'
+     - name: model_stats
+       sql: |
+         WITH latest_runs AS (
+           SELECT model, MAX(created_at) as latest_run
+           FROM eval.runs
+           WHERE dataset = 'user_queries'
+           GROUP BY model
+         )
+         SELECT
+           r.model,
+           COUNT(*) as total_queries,
+           SUM(CASE WHEN res.value = 1.0 THEN 1 ELSE 0 END) as correct_answers,
+           AVG(res.value) as accuracy
+         FROM eval.runs r
+         JOIN latest_runs lr ON r.model = lr.model AND r.created_at = lr.latest_run
+         JOIN eval.results res ON res.run_id = r.id
+         GROUP BY r.model
 
    evals:
      - name: mimic-user-queries
@@ -225,23 +242,11 @@ dependencies:
    ```
 
    ```sql
-   WITH model_stats AS (
-     SELECT
-       model,
-       COUNT(*) as total_queries,
-       SUM(CASE WHEN value = 1.0 THEN 1 ELSE 0 END) as correct_answers,
-       AVG(value) as accuracy,
-       AVG(EXTRACT(EPOCH FROM (ended_at - started_at))) as avg_response_time
-     FROM eval.results
-     WHERE eval = 'mimic-user-queries'
-     GROUP BY model
-   )
    SELECT
      model,
      total_queries,
      correct_answers,
-     ROUND(accuracy * 100, 2) as accuracy_percentage,
-     ROUND(avg_response_time, 3) as avg_response_seconds
+     ROUND(accuracy * 100, 2) as accuracy_percentage
    FROM model_stats
    ORDER BY accuracy_percentage DESC;
    ```
@@ -250,8 +255,7 @@ dependencies:
 
    - Total number of queries processed
    - Number of correct answers
-   - Accuracy percentage
-   - Average response time in seconds
+   - Accuracy percentage as a percentage
 
    You can use these metrics to decide if the smaller model provides acceptable performance for your use case.
 
