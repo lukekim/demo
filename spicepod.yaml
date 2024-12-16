@@ -1,8 +1,22 @@
-name: demo
-kind: Spicepod
 version: v1beta1
+kind: Spicepod
+name: demo
+
+dependencies:
+  - Jeadie/evals
+
+runtime:
+  task_history:
+    captured_output: truncated
+
 datasets:
   - from: s3://spiceai-demo-datasets/taxi_trips/2024/
     name: taxi_trips
     params:
       file_format: parquet
+
+models:
+  - name: gpt-4o
+    from: openai:gpt-4o
+    params:
+      openai_api_key: ${ secrets:SPICE_OPENAI_API_KEY }

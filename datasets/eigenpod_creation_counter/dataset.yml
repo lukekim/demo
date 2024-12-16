@@ -1,9 +1,0 @@
-name: lukekim.demo.eigenpod_creation_counter
-type: append
-migrations:
-  - name: create_table
-    sql: |
-      CREATE TABLE IF NOT EXISTS lukekim.demo.eigenpod_creation_counter (
-        block_number BIGINT PRIMARY KEY,
-        eigenpods_created BIGINT
-      )

@@ -1,0 +1,611 @@
+datasets:
+    - from: spice.ai/Jeadie/evals/datasets/cube_pack__dev__v0
+      name: cube_pack__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/historical_kana_orthography_reading__dev__v0
+      name: historical_kana_orthography_reading__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/canto_wu_pronunciation_fewshot__dev__v0
+      name: canto_wu_pronunciation_fewshot__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/accounting_audit__dev__v0
+      name: accounting_audit__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/brazilian_lexicon__dev__v0
+      name: brazilian_lexicon__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/naughty_strings__test__v1
+      name: naughty_strings__test__v1
+    - from: spice.ai/Jeadie/evals/datasets/korean_phonetics__dev__v0
+      name: korean_phonetics__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/chinese_homophonic__dev__v0
+      name: chinese_homophonic__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/count_intersections_polynomial__dev__v0
+      name: count_intersections_polynomial__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/coqa_match__dev__v0
+      name: coqa_match__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/latin_grammar__dev__v0
+      name: latin_grammar__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/bitwise__dev__v0
+      name: bitwise__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/shared_borders__dev__v0
+      name: shared_borders__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/japanese_station__dev__v0
+      name: japanese_station__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/atpl_exams__dev__v0
+      name: atpl_exams__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/invoice_due_date_leap_day_adjustment__dev__v0
+      name: invoice_due_date_leap_day_adjustment__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/romanian_homonyms__dev__v0
+      name: romanian_homonyms__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/infiniteloop_match__s1__simple_v0
+      name: infiniteloop_match__s1__simple_v0
+    - from: spice.ai/Jeadie/evals/datasets/russian_nlp_tasks__dev__v0
+      name: russian_nlp_tasks__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/chinese_chu_ci__dev__v0
+      name: chinese_chu_ci__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/polish_syllable_count__val__v0
+      name: polish_syllable_count__val__v0
+    - from: spice.ai/Jeadie/evals/datasets/korean_postposition__dev__v0
+      name: korean_postposition__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/bulgarian_lexicon__dev__v0
+      name: bulgarian_lexicon__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/compare_countries_area__dev__v0
+      name: compare_countries_area__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/pattern_identification__dev__v0
+      name: pattern_identification__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/belarusian_synonyms__dev__v0
+      name: belarusian_synonyms__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/spanish_feminine_noun_masculine_article__dev__v0
+      name: spanish_feminine_noun_masculine_article__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/sarcasm__test__v1
+      name: sarcasm__test__v1
+    - from: spice.ai/Jeadie/evals/datasets/chinese_tang_poetries__dev__match_v1
+      name: chinese_tang_poetries__dev__match_v1
+    - from: spice.ai/Jeadie/evals/datasets/japanese_number_reading__dev__v0
+      name: japanese_number_reading__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/korean_honorific__dev__v0
+      name: korean_honorific__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/complex_replace_characters__dev__v0
+      name: complex_replace_characters__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/dice_rotation_sequence__dev__v0
+      name: dice_rotation_sequence__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/utah_real_estate__dev__v0
+      name: utah_real_estate__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/formal_logic__dev__v0
+      name: formal_logic__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/resistor_ohm_calculator__dev__simple_v0
+      name: resistor_ohm_calculator__dev__simple_v0
+    - from: spice.ai/Jeadie/evals/datasets/gol__dev__v1
+      name: gol__dev__v1
+    - from: spice.ai/Jeadie/evals/datasets/icelandic_sentences_gec__dev__v0
+      name: icelandic_sentences_gec__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/chinese_modern_poem_identification__test__v1
+      name: chinese_modern_poem_identification__test__v1
+    - from: spice.ai/Jeadie/evals/datasets/reverse_string__s1__simple_v0
+      name: reverse_string__s1__simple_v0
+    - from: spice.ai/Jeadie/evals/datasets/complex_analogies_en_ru__dev__v0
+      name: complex_analogies_en_ru__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/positive_binary_operations__test__v1
+      name: positive_binary_operations__test__v1
+    - from: spice.ai/Jeadie/evals/datasets/hindi_shuddha__dev__v0
+      name: hindi_shuddha__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/tokyo_station_number__dev__v0
+      name: tokyo_station_number__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/chinese_famous_novel__dev__v0
+      name: chinese_famous_novel__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/diagrammatic_logic__dev__v2
+      name: diagrammatic_logic__dev__v2
+    - from: spice.ai/Jeadie/evals/datasets/polish_lexicon__dev__v0
+      name: polish_lexicon__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/wkt_understanding__dev__v0
+      name: wkt_understanding__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/japanese_national_medical_exam02__dev__v0
+      name: japanese_national_medical_exam02__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/cardinal_directions__dev__v0
+      name: cardinal_directions__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/rectangles__dev__v0
+      name: rectangles__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/hindi_upsc__dev__v0
+      name: hindi_upsc__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/three_pt_mapping__dev__v0
+      name: three_pt_mapping__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/polish_proverbs__dev__v0
+      name: polish_proverbs__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/indonesian_numbers__dev__v0
+      name: indonesian_numbers__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/chinese_song_ci__dev__v0
+      name: chinese_song_ci__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/cybersecurity_filepaths__dev__v0
+      name: cybersecurity_filepaths__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/taxes__dev__v0
+      name: taxes__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/crontab__dev__v0
+      name: crontab__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/integer_sequence_predictions_misc__dev__v0
+      name: integer_sequence_predictions_misc__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/integer_sequence_predictions_obscure__dev__v0
+      name: integer_sequence_predictions_obscure__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/integer_sequence_predictions_notable__dev__v0
+      name: integer_sequence_predictions_notable__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/integer_sequence_predictions__dev__v0
+      name: integer_sequence_predictions__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/belarusian_orthography__dev__v0
+      name: belarusian_orthography__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/date_booking__dev__v0
+      name: date_booking__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/interlingual_homograph__dev__v0
+      name: interlingual_homograph__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/stats_tests__dev__v0
+      name: stats_tests__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/belarusian_russian_translation__dev__v0
+      name: belarusian_russian_translation__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/date_calculator__test__v1
+      name: date_calculator__test__v1
+    - from: spice.ai/Jeadie/evals/datasets/chinese_poem__dev__v0
+      name: chinese_poem__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/belarusian_lexicon__dev__v0
+      name: belarusian_lexicon__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/test_english_pronunciations__dev__v0
+      name: test_english_pronunciations__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/anagrams__test__v1
+      name: anagrams__test__v1
+    - from: spice.ai/Jeadie/evals/datasets/guess_the_singer__dev__v0
+      name: guess_the_singer__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/illinois_law__v0
+      name: illinois_law__v0
+    - from: spice.ai/Jeadie/evals/datasets/russian_medical__dev__v0
+      name: russian_medical__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/bigrams__dev__v0
+      name: bigrams__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/probability_questions__dev__v0
+      name: probability_questions__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/vintage_phone_keyboard_decode__dev__v0
+      name: vintage_phone_keyboard_decode__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/connect4__s1__v1
+      name: connect4__s1__v1
+    - from: spice.ai/Jeadie/evals/datasets/stock_options_bull_call_spread__dev__v0
+      name: stock_options_bull_call_spread__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/stock_options_bear_call_spread__dev__v0
+      name: stock_options_bear_call_spread__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/stock_option_terms_bear_call_spread__dev__v0
+      name: stock_option_terms_bear_call_spread__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/stock_option_terms_iron_butterfly_spread__dev__v0
+      name: stock_option_terms_iron_butterfly_spread__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/stock_option_terms_bull_call_spread__dev__v0
+      name: stock_option_terms_bull_call_spread__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/stock_options_inverse_iron_condor_spread__dev__v0
+      name: stock_options_inverse_iron_condor_spread__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/stock_options_iron_condor_spread__dev__v0
+      name: stock_options_iron_condor_spread__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/stock_option_terms_iron_condor_spread__dev__v0
+      name: stock_option_terms_iron_condor_spread__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/stock_options_inverse_iron_butterfly_spread__dev__v0
+      name: stock_options_inverse_iron_butterfly_spread__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/stock_option_terms_inverse_iron_condor_spread__dev__v0
+      name: stock_option_terms_inverse_iron_condor_spread__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/japanese_romantic_context__dev__v0
+      name: japanese_romantic_context__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/phonetics_identify_words_needing_missing_gpcs__s1__simple_v0
+      name: phonetics_identify_words_needing_missing_gpcs__s1__simple_v0
+    - from: spice.ai/Jeadie/evals/datasets/prompt_injection__dev__v0
+      name: prompt_injection__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/word_vector_over_reliance__dev__simple_v0
+      name: word_vector_over_reliance__dev__simple_v0
+    - from: spice.ai/Jeadie/evals/datasets/iso_to_lunar_calendar__dev__v0
+      name: iso_to_lunar_calendar__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/lunar_calendar_to_iso__dev__v0
+      name: lunar_calendar_to_iso__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/code_combination__dev__v0
+      name: code_combination__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/partially_solved_crossword_clues__dev__v0
+      name: partially_solved_crossword_clues__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/quartz__test__v1
+      name: quartz__test__v1
+    - from: spice.ai/Jeadie/evals/datasets/physics__interaction__dev__v0
+      name: physics__interaction__dev__v0
+    - from: spice.ai/Jeadie/evals/datasets/next_val_series__dev__simple_v0
+      name: next_val_series__dev__simple_v0
+evals:
+    - dataset: cube_pack__dev__v0
+      name: cube-pack
+      scorers:
+        - match
+    - dataset: historical_kana_orthography_reading__dev__v0
+      name: historical-kana-orthography-reading
+      scorers:
+        - match
+    - dataset: canto_wu_pronunciation_fewshot__dev__v0
+      name: canto_wu_pronunciation_fewshot
+      scorers:
+        - match
+    - dataset: accounting_audit__dev__v0
+      name: accounting_audit
+      scorers:
+        - match
+    - dataset: brazilian_lexicon__dev__v0
+      name: brazilian-lexicon
+      scorers:
+        - match
+    - dataset: naughty_strings__test__v1
+      name: naughty_strings
+      scorers:
+        - match
+    - dataset: korean_phonetics__dev__v0
+      name: korean-phonetics
+      scorers:
+        - match
+    - dataset: chinese_homophonic__dev__v0
+      name: chinese-homo
+      scorers:
+        - match
+    - dataset: count_intersections_polynomial__dev__v0
+      name: count_intersections_polynomial
+      scorers:
+        - match
+    - dataset: coqa_match__dev__v0
+      name: coqa-match
+      scorers:
+        - match
+    - dataset: latin_grammar__dev__v0
+      name: latin-grammar
+      scorers:
+        - match
+    - dataset: bitwise__dev__v0
+      name: bitwise
+      scorers:
+        - match
+    - dataset: shared_borders__dev__v0
+      name: shared-borders
+      scorers:
+        - match
+    - dataset: japanese_station__dev__v0
+      name: japanese-station
+      scorers:
+        - match
+    - dataset: atpl_exams__dev__v0
+      name: atpl_exams
+      scorers:
+        - match
+    - dataset: invoice_due_date_leap_day_adjustment__dev__v0
+      name: invoice_due_date_leap_day_adjustment
+      scorers:
+        - match
+    - dataset: romanian_homonyms__dev__v0
+      name: romanian_homonyms
+      scorers:
+        - match
+    - dataset: infiniteloop_match__s1__simple_v0
+      name: infiniteloop-match
+      scorers:
+        - match
+    - dataset: russian_nlp_tasks__dev__v0
+      name: russian-nlp-tasks
+      scorers:
+        - match
+    - dataset: chinese_chu_ci__dev__v0
+      name: chinese_chu_ci
+      scorers:
+        - match
+    - dataset: polish_syllable_count__val__v0
+      name: polish-syllable-count
+      scorers:
+        - match
+    - dataset: korean_postposition__dev__v0
+      name: korean-postposition
+      scorers:
+        - match
+    - dataset: bulgarian_lexicon__dev__v0
+      name: bulgarian-lexicon
+      scorers:
+        - match
+    - dataset: compare_countries_area__dev__v0
+      name: compare-countries-area
+      scorers:
+        - match
+    - dataset: pattern_identification__dev__v0
+      name: pattern_identification
+      scorers:
+        - match
+    - dataset: belarusian_synonyms__dev__v0
+      name: belarusian-synonyms
+      scorers:
+        - match
+    - dataset: spanish_feminine_noun_masculine_article__dev__v0
+      name: spanish_feminine_noun_masculine_article
+      scorers:
+        - match
+    - dataset: sarcasm__test__v1
+      name: sarcasm
+      scorers:
+        - match
+    - dataset: chinese_tang_poetries__dev__match_v1
+      name: chinese_tang_poetries
+      scorers:
+        - match
+    - dataset: japanese_number_reading__dev__v0
+      name: japanese-number-reading
+      scorers:
+        - match
+    - dataset: korean_honorific__dev__v0
+      name: korean-honorific
+      scorers:
+        - match
+    - dataset: complex_replace_characters__dev__v0
+      name: complex-replace-characters
+      scorers:
+        - match
+    - dataset: dice_rotation_sequence__dev__v0
+      name: dice-rotation-sequence
+      scorers:
+        - match
+    - dataset: utah_real_estate__dev__v0
+      name: utah_real_estateh
+      scorers:
+        - match
+    - dataset: formal_logic__dev__v0
+      name: formal-logic
+      scorers:
+        - match
+    - dataset: resistor_ohm_calculator__dev__simple_v0
+      name: resistor-ohm-calculator
+      scorers:
+        - match
+    - dataset: gol__dev__v1
+      name: gol
+      scorers:
+        - match
+    - dataset: icelandic_sentences_gec__dev__v0
+      name: icelandic-sentences-gec
+      scorers:
+        - match
+    - dataset: chinese_modern_poem_identification__test__v1
+      name: chinese_modern_poem_identification
+      scorers:
+        - match
+    - dataset: reverse_string__s1__simple_v0
+      name: reverse-string
+      scorers:
+        - match
+    - dataset: complex_analogies_en_ru__dev__v0
+      name: complex-analogies-en-ru
+      scorers:
+        - match
+    - dataset: positive_binary_operations__test__v1
+      name: positive-binary-operations
+      scorers:
+        - match
+    - dataset: hindi_shuddha__dev__v0
+      name: hindi_shuddha
+      scorers:
+        - match
+    - dataset: tokyo_station_number__dev__v0
+      name: tokyo-station-number
+      scorers:
+        - match
+    - dataset: chinese_famous_novel__dev__v0
+      name: chinese_famous_novel
+      scorers:
+        - match
+    - dataset: diagrammatic_logic__dev__v2
+      name: diagrammatic_logic
+      scorers:
+        - match
+    - dataset: polish_lexicon__dev__v0
+      name: polish-lexicon
+      scorers:
+        - match
+    - dataset: wkt_understanding__dev__v0
+      name: wkt_understanding
+      scorers:
+        - match
+    - dataset: japanese_national_medical_exam02__dev__v0
+      name: japanese-national-medical-exam02
+      scorers:
+        - match
+    - dataset: cardinal_directions__dev__v0
+      name: cardinal-directions
+      scorers:
+        - match
+    - dataset: rectangles__dev__v0
+      name: rectangles
+      scorers:
+        - match
+    - dataset: hindi_upsc__dev__v0
+      name: hindi_upsc
+      scorers:
+        - match
+    - dataset: three_pt_mapping__dev__v0
+      name: three-pt-mapping
+      scorers:
+        - match
+    - dataset: polish_proverbs__dev__v0
+      name: polish-proverbs
+      scorers:
+        - match
+    - dataset: indonesian_numbers__dev__v0
+      name: indonesian_numbers
+      scorers:
+        - match
+    - dataset: chinese_song_ci__dev__v0
+      name: chinese_song_ci
+      scorers:
+        - match
+    - dataset: cybersecurity_filepaths__dev__v0
+      name: cybersecurity-filepaths
+      scorers:
+        - match
+    - dataset: taxes__dev__v0
+      name: taxes
+      scorers:
+        - match
+    - dataset: crontab__dev__v0
+      name: crontab
+      scorers:
+        - match
+    - dataset: integer_sequence_predictions_misc__dev__v0
+      name: integer-sequence-predictions-misc
+      scorers:
+        - match
+    - dataset: integer_sequence_predictions_obscure__dev__v0
+      name: integer-sequence-predictions-obscure
+      scorers:
+        - match
+    - dataset: integer_sequence_predictions_notable__dev__v0
+      name: integer-sequence-predictions-notable
+      scorers:
+        - match
+    - dataset: integer_sequence_predictions__dev__v0
+      name: integer-sequence-predictions
+      scorers:
+        - match
+    - dataset: belarusian_orthography__dev__v0
+      name: belarusian-orthography
+      scorers:
+        - match
+    - dataset: date_booking__dev__v0
+      name: date-booking
+      scorers:
+        - match
+    - dataset: interlingual_homograph__dev__v0
+      name: interlingual-homograph
+      scorers:
+        - match
+    - dataset: stats_tests__dev__v0
+      name: stats-tests
+      scorers:
+        - match
+    - dataset: belarusian_russian_translation__dev__v0
+      name: belarusian-russian-translation
+      scorers:
+        - match
+    - dataset: date_calculator__test__v1
+      name: date-calculator
+      scorers:
+        - match
+    - dataset: chinese_poem__dev__v0
+      name: chinese_poem
+      scorers:
+        - match
+    - dataset: belarusian_lexicon__dev__v0
+      name: belarusian-lexicon
+      scorers:
+        - match
+    - dataset: test_english_pronunciations__dev__v0
+      name: test_english_pronunciations
+      scorers:
+        - match
+    - dataset: anagrams__test__v1
+      name: anagrams
+      scorers:
+        - match
+    - dataset: guess_the_singer__dev__v0
+      name: guess-the-singer
+      scorers:
+        - match
+    - dataset: illinois_law__v0
+      name: illinois-law
+      scorers:
+        - match
+    - dataset: russian_medical__dev__v0
+      name: russian_medical
+      scorers:
+        - match
+    - dataset: bigrams__dev__v0
+      name: bigrams
+      scorers:
+        - match
+    - dataset: probability_questions__dev__v0
+      name: probability-questions
+      scorers:
+        - match
+    - dataset: vintage_phone_keyboard_decode__dev__v0
+      name: vintage_phone_keyboard_decode
+      scorers:
+        - match
+    - dataset: connect4__s1__v1
+      name: connect4
+      scorers:
+        - match
+    - dataset: stock_options_bull_call_spread__dev__v0
+      name: stock-options-bull-call-spread
+      scorers:
+        - match
+    - dataset: stock_options_bear_call_spread__dev__v0
+      name: stock-options-bear-call-spread
+      scorers:
+        - match
+    - dataset: stock_option_terms_bear_call_spread__dev__v0
+      name: stock-option-terms-bear-call-spread
+      scorers:
+        - match
+    - dataset: stock_option_terms_iron_butterfly_spread__dev__v0
+      name: stock-option-terms-iron-butteryfly-spread
+      scorers:
+        - match
+    - dataset: stock_option_terms_bull_call_spread__dev__v0
+      name: stock-option-terms-bull-call-spread
+      scorers:
+        - match
+    - dataset: stock_options_inverse_iron_condor_spread__dev__v0
+      name: stock-options-inverse-iron-condor-spread
+      scorers:
+        - match
+    - dataset: stock_options_iron_condor_spread__dev__v0
+      name: stock-options-iron-condor-spread
+      scorers:
+        - match
+    - dataset: stock_option_terms_iron_condor_spread__dev__v0
+      name: stock-option-terms-iron-condor-spread
+      scorers:
+        - match
+    - dataset: stock_options_inverse_iron_butterfly_spread__dev__v0
+      name: stock-options-inverse-iron-butterfly-spread
+      scorers:
+        - match
+    - dataset: stock_option_terms_inverse_iron_condor_spread__dev__v0
+      name: stock-option-terms-inverse-iron-condor-spread
+      scorers:
+        - match
+    - dataset: japanese_romantic_context__dev__v0
+      name: japanese_romantic_context
+      scorers:
+        - match
+    - dataset: phonetics_identify_words_needing_missing_gpcs__s1__simple_v0
+      name: phonetics-identify-words-needing-missing-gpcs
+      scorers:
+        - match
+    - dataset: prompt_injection__dev__v0
+      name: prompt-injection
+      scorers:
+        - match
+    - dataset: word_vector_over_reliance__dev__simple_v0
+      name: word_vector_over_reliance
+      scorers:
+        - match
+    - dataset: iso_to_lunar_calendar__dev__v0
+      name: iso-to-lunar-calendar
+      scorers:
+        - match
+    - dataset: lunar_calendar_to_iso__dev__v0
+      name: lunar-calendar-to-iso
+      scorers:
+        - match
+    - dataset: code_combination__dev__v0
+      name: code_combination
+      scorers:
+        - match
+    - dataset: partially_solved_crossword_clues__dev__v0
+      name: partially_solved_crossword_clues
+      scorers:
+        - match
+    - dataset: quartz__test__v1
+      name: quartz
+      scorers:
+        - match
+    - dataset: physics__interaction__dev__v0
+      name: physics-interaction
+      scorers:
+        - match
+    - dataset: next_val_series__dev__simple_v0
+      name: next-val-series
+      scorers:
+        - match
+kind: Spicepod
+name: spicepod
+version: v1beta1
