@@ -15,6 +15,23 @@ datasets:
     params:
       file_format: parquet
 
+views:
+  - name: user_queries
+    sql: |
+      SELECT
+        json_get_json(input, 'messages') AS input,
+        json_get_str((captured_output -> 0), 'content') as ideal
+      FROM runtime.task_history
+      WHERE task='ai_completion'
+
+evals:
+  - name: mimic-user-queries
+    description: |
+      Evaluates how well a model can copy the exact answers already returned to a user. Useful for testing if a smaller/cheaper model is sufficient.
+    dataset: user_queries
+    scorers:
+      - match:
+
 models:
   - name: gpt-4o
     from: openai:gpt-4o
