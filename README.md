@@ -77,21 +77,22 @@ Click on <username>/evals, click on **Use this app**, and copy the `spice connec
    <img width="1679" alt="image" src="https://github.com/user-attachments/assets/ee044042-4a21-4eae-a571-ca9b5c82b976" />
  
  Paste the command into the terminal.
+   Navigate to [spicerack.org](https://spicerack.org), search for `evals`, click on <username>/evals, click on **Use this app**, and copy the `spice connect` command. Paste the command into the terminal.
 
-   ```bash
-   spice connect <username>/evals
-   ```
+```bash
+spice connect <username>/evals
+```
 
-   The `spicepod.yml` should be updated to:
+The `spicepod.yml` should be updated to:
 
-   ```yaml
-   version: v1beta1
-   kind: Spicepod
-   name: demo
+```yaml
+version: v1beta1
+kind: Spicepod
+name: demo
 
-   dependencies:
-     - Jeadie/evals
-   ```
+dependencies:
+  - Jeadie/evals
+```
 
 5. **Add a model to the spicepod**
 
@@ -177,24 +178,82 @@ Click on <username>/evals, click on **Use this app**, and copy the `spice connec
      - name: gpt-4o # Keep previous model.
    ```
 
-4. Restart the Spice app:
+4. Verify models are loaded:
+
+   ```bash
+   spice models
+   ```
+
+   You should see both models listed:
+
+   ```shell
+   NAME    FROM                                                         STATUS
+   gpt-4o  openai:gpt-4o                                                ready
+   llama3  huggingface:huggingface.co/meta-llama/Llama-3.3-70B-Instruct ready
+   ```
+
+5. Restart the Spice app:
 
    ```bash
    spice run
    ```
 
-5. Test the larger model or run another eval:
+6. Test the larger model or run another eval:
 
    ```bash
    spice chat
    ```
 
-6. Run the new eval on the smaller model:
+7. Run evaluations on both models:
+
    ```bash
-   curl -XPOST "http://localhost:8090/v1/evals/mimic-user-queries"      -H "Content-Type: application/json"      -d '{
-       "model": "llama3"
-     }' | jq
+   # Run eval with GPT-4
+   curl -XPOST "http://localhost:8090/v1/evals/mimic-user-queries" \
+     -H "Content-Type: application/json" \
+     -d '{"model": "gpt-4o"}' | jq
+
+   # Run eval with LLaMA
+   curl -XPOST "http://localhost:8090/v1/evals/mimic-user-queries" \
+     -H "Content-Type: application/json" \
+     -d '{"model": "llama3"}' | jq
    ```
+
+8. Compare model performance:
+
+   ```bash
+   spice sql
+   ```
+
+   ```sql
+   WITH model_stats AS (
+     SELECT
+       model,
+       COUNT(*) as total_queries,
+       SUM(CASE WHEN value = 1.0 THEN 1 ELSE 0 END) as correct_answers,
+       AVG(value) as accuracy,
+       AVG(EXTRACT(EPOCH FROM (ended_at - started_at))) as avg_response_time
+     FROM eval.results
+     WHERE eval = 'mimic-user-queries'
+     GROUP BY model
+   )
+   SELECT
+     model,
+     total_queries,
+     correct_answers,
+     ROUND(accuracy * 100, 2) as accuracy_percentage,
+     ROUND(avg_response_time, 3) as avg_response_seconds
+   FROM model_stats
+   ORDER BY accuracy_percentage DESC;
+   ```
+
+   This query will show:
+
+   - Total number of queries processed
+   - Number of correct answers
+   - Accuracy percentage
+   - Average response time in seconds
+
+   You can use these metrics to decide if the smaller model provides acceptable performance for your use case.
 
 ---
 
