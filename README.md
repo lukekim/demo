@@ -68,10 +68,18 @@ Connect with us on [Discord](https://discord.gg/PUCapX22En) - your feedback is a
    ```
 
 3. **Get spicepod from Spicerack**
-   Navigate to [spicerack.org](https://spicerack.org), search for `evals`, click on Jeadie/evals, click on **Use this app**, and copy the `spice connect` command. Paste the command into the terminal.
+   Navigate to [spicerack.org](https://spicerack.org), search for `evals`.
+
+   <img width="1679" alt="image" src="https://github.com/user-attachments/assets/248bc281-fbcd-4312-a724-fc295ee0dc13" />
+
+Click on <username>/evals, click on **Use this app**, and copy the `spice connect` command.
+
+   <img width="1679" alt="image" src="https://github.com/user-attachments/assets/ee044042-4a21-4eae-a571-ca9b5c82b976" />
+ 
+ Paste the command into the terminal.
 
    ```bash
-   spice connect Jeadie/evals
+   spice connect <username>/evals
    ```
 
    The `spicepod.yml` should be updated to:
@@ -85,7 +93,7 @@ Connect with us on [Discord](https://discord.gg/PUCapX22En) - your feedback is a
      - Jeadie/evals
    ```
 
-4. **Add a model to the spicepod**
+5. **Add a model to the spicepod**
 
    ```yaml
    models:
@@ -95,13 +103,13 @@ Connect with us on [Discord](https://discord.gg/PUCapX22En) - your feedback is a
          openai_api_key: ${ secrets:SPICE_OPENAI_API_KEY }
    ```
 
-5. **Start spice**
+6. **Start spice**
 
    ```bash
    spice run
    ```
 
-6. **Run an eval**
+7. **Run an eval**
 
    ```bash
    curl -XPOST "http://localhost:8090/v1/evals/taxes"      -H "Content-Type: application/json"      -d '{
@@ -109,7 +117,7 @@ Connect with us on [Discord](https://discord.gg/PUCapX22En) - your feedback is a
      }' | jq
    ```
 
-7. **Explore incorrect results**
+8. **Explore incorrect results**
 
    ```bash
    spice sql
