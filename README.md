@@ -1,16 +1,236 @@
-# Spice.ai demo app
+# Spice.ai Demo App
 
 This is a [Spice.ai](https://spice.ai/) data and AI app.
+
+## Prerequisites
+
+- [Spice.ai CLI](https://docs.spice.ai/get-started/installation) installed
+- OpenAI API key
+- Hugging Face API token (optional, for LLaMA model)
+- `curl` and `jq` for API calls
 
 ## Learn More
 
 To learn more about Spice.ai, take a look at the following resources:
 
-- [Spice.ai](https://docs.spice.ai) - learn about Spice.xyz features, data, and API.
-- [Get started with Spice.ai](https://docs.spice.xyz/get-started) - try out the API and make basic queries.
+- [Spice.ai](https://docs.spice.ai) - learn about Spice.ai features, data, and API.
+- [Get started with Spice.ai](https://docs.spice.ai/get-started) - try out the API and make basic queries.
 
 Connect with us on [Discord](https://discord.gg/PUCapX22En) - your feedback is appreciated!
 
-## Deploy on Spice.ai
+---
 
-Merges to `main` will automatically be deployed.
+## Demo Steps
+
+### Publishing a Spice App in the Cloud
+
+#### Step 1: Forking and Using the Dataset
+
+1. Fork the repository `https://github.com/jeadie/evals` into your GitHub org.
+
+#### Step 2: Creating a New App in the Cloud
+
+1. Log into the [Spice.ai Cloud Platform](https://spice.ai/login) and create a new app called `evals`. The app will start empty.
+2. Connect the app to your repository:
+   - Go to the **App Settings** tab and select **Connect Repository**.
+   - If the repository is not yet linked, follow the prompts to authenticate and link it.
+
+#### Step 3: Deploying the App
+
+1. Set the app to **Public**:
+   - Navigate to the app's settings and toggle the visibility to public.
+2. Redeploy the app:
+   - Click **Redeploy** to load the datasets and configurations from the repository.
+
+#### Step 4: Verifying and Testing
+
+1. Check the datasets in the Spice.ai Cloud:
+   - Verify that the datasets are correctly loaded and accessible.
+2. Test public access:
+   - Log in with a different account to confirm the app is accessible to external users.
+
+---
+
+### Initializing a Local Spice App
+
+1. **Initialize a new local Spice app**
+
+   ```bash
+   mkdir demo
+   cd demo
+   spice init
+   ```
+
+2. **Login to Spice.ai Cloud**
+
+   ```bash
+   spice login
+   ```
+
+3. **Get spicepod from Spicerack**
+   Navigate to [spicerack.org](https://spicerack.org), search for `evals`, click on Jeadie/evals, click on **Use this app**, and copy the `spice connect` command. Paste the command into the terminal.
+
+   ```bash
+   spice connect Jeadie/evals
+   ```
+
+   The `spicepod.yml` should be updated to:
+
+   ```yaml
+   version: v1beta1
+   kind: Spicepod
+   name: demo
+
+   dependencies:
+     - Jeadie/evals
+   ```
+
+4. **Add a model to the spicepod**
+
+   ```yaml
+   models:
+     - name: gpt-4o
+       from: openai:gpt-4o
+       params:
+         openai_api_key: ${ secrets:SPICE_OPENAI_API_KEY }
+   ```
+
+5. **Start spice**
+
+   ```bash
+   spice run
+   ```
+
+6. **Run an eval**
+
+   ```bash
+   curl -XPOST "http://localhost:8090/v1/evals/taxes"      -H "Content-Type: application/json"      -d '{
+       "model": "gpt-4o"
+     }' | jq
+   ```
+
+7. **Explore incorrect results**
+
+   ```bash
+   spice sql
+   ```
+
+   ```sql
+   SELECT
+     input,
+     output,
+     actual
+   FROM eval.results
+   WHERE value=0.0 LIMIT 5;
+   ```
+
+---
+
+### Optional: Create an Eval to Use a Smaller Model
+
+1. Track the outputs of all AI model calls:
+
+   ```yaml
+   runtime:
+     task_history:
+       captured_output: truncated
+   ```
+
+2. Define a new view and evaluation:
+
+   ```yaml
+   views:
+     - name: user_queries
+       sql: |
+         SELECT
+           json_get_json(input, 'messages') AS input,
+           json_get_str((captured_output -> 0), 'content') as ideal
+         FROM runtime.task_history
+         WHERE task='ai_completion'
+
+   evals:
+     - name: mimic-user-queries
+       description: |
+         Evaluates how well a model can copy the exact answers already returned to a user. Useful for testing if a smaller/cheaper model is sufficient.
+       dataset: user_queries
+       scorers:
+         - match
+   ```
+
+3. Add a smaller model to the spicepod:
+
+   ```yaml
+   models:
+     - name: llama3
+       from: huggingface:huggingface.co/meta-llama/Llama-3.3-70B-Instruct
+       params:
+         hf_token: ${ secrets:SPICE_HUGGINGFACE_API_KEY }
+
+     - name: gpt-4o # Keep previous model.
+   ```
+
+4. Restart the Spice app:
+
+   ```bash
+   spice run
+   ```
+
+5. Test the larger model or run another eval:
+
+   ```bash
+   spice chat
+   ```
+
+6. Run the new eval on the smaller model:
+   ```bash
+   curl -XPOST "http://localhost:8090/v1/evals/mimic-user-queries"      -H "Content-Type: application/json"      -d '{
+       "model": "llama3"
+     }' | jq
+   ```
+
+---
+
+### Full Spicepod Configuration
+
+Include the following `spicepod.yml` for reference:
+
+```yaml
+version: v1beta1
+kind: Spicepod
+name: demo
+
+dependencies:
+  - Jeadie/evals
+
+runtime:
+  task_history:
+    captured_output: truncated
+
+views:
+  - name: user_queries
+    sql: |
+      SELECT
+        json_get_json(input, 'messages') AS input,
+        json_get_str((captured_output -> 0), 'content') as ideal
+      FROM runtime.task_history
+      WHERE task='ai_completion'
+
+evals:
+  - name: mimic-user-queries
+    description: |
+      Evaluates how well a model can copy the exact answers already returned to a user. Useful for testing if a smaller/cheaper model is sufficient.
+    dataset: user_queries
+    scorers:
+      - match
+
+models:
+  - name: gpt-4o
+    from: openai:gpt-4o
+    params:
+      openai_api_key: ${ secrets:SPICE_OPENAI_API_KEY }
+
+  - name: llama3
+    from: huggingface:huggingface.co/meta-llama/Llama-3.3-70B-Instruct
+    params:
+      hf_token: ${ secrets:SPICE_HUGGINGFACE_API_KEY }
+```

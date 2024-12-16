@@ -20,3 +20,8 @@ models:
     from: openai:gpt-4o
     params:
       openai_api_key: ${ secrets:SPICE_OPENAI_API_KEY }
+
+  - name: llama3
+    from: huggingface:huggingface.co/meta-llama/Llama-3.3-70B-Instruct
+    params:
+      hf_token: ${ secrets:SPICE_HUGGINGFACE_API_KEY }
