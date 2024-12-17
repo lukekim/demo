@@ -156,14 +156,14 @@ dependencies:
            json_get_str((captured_output -> 0), 'content') as ideal
          FROM runtime.task_history
          WHERE task='ai_completion'
+     - name: latest_eval_runs
+       sql: |
+         SELECT model, MAX(created_at) as latest_run
+            FROM eval.runs
+            WHERE dataset = 'user_queries'
+            GROUP BY model
      - name: model_stats
        sql: |
-         WITH latest_runs AS (
-           SELECT model, MAX(created_at) as latest_run
-           FROM eval.runs
-           WHERE dataset = 'user_queries'
-           GROUP BY model
-         )
          SELECT
            r.model,
            COUNT(*) as total_queries,

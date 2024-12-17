@@ -23,14 +23,16 @@ views:
         json_get_str((captured_output -> 0), 'content') as ideal
       FROM runtime.task_history
       WHERE task='ai_completion'
-  - name: model_stats
+
+  - name: latest_eval_runs
     sql: |
-      WITH latest_runs AS (
-        SELECT model, MAX(created_at) as latest_run
+      SELECT model, MAX(created_at) as latest_run
         FROM eval.runs
         WHERE dataset = 'user_queries'
         GROUP BY model
-      )
+
+  - name: model_stats
+    sql: |
       SELECT 
         r.model,
         COUNT(*) as total_queries,
