@@ -39,7 +39,7 @@ views:
         SUM(CASE WHEN res.value = 1.0 THEN 1 ELSE 0 END) as correct_answers,
         AVG(res.value) as accuracy
       FROM eval.runs r
-      JOIN latest_runs lr ON r.model = lr.model AND r.created_at = lr.latest_run
+      JOIN latest_eval_runs lr ON r.model = lr.model AND r.created_at = lr.latest_run
       JOIN eval.results res ON res.run_id = r.id
       GROUP BY r.model
 
