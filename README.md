@@ -160,7 +160,6 @@ dependencies:
        sql: |
          SELECT model, MAX(created_at) as latest_run
             FROM eval.runs
-            WHERE dataset = 'user_queries'
             GROUP BY model
      - name: model_stats
        sql: |
