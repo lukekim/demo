@@ -2,57 +2,15 @@ version: v1
 kind: Spicepod
 name: demo
 
-dependencies:
-  - Jeadie/evals
-
-runtime:
-  task_history:
-    captured_output: truncated
-
 datasets:
   - from: s3://spiceai-demo-datasets/taxi_trips/2024/
     name: taxi_trips
     params:
       file_format: parquet
 
-views:
-  - name: user_queries
-    sql: |
-      SELECT
-        json_get_json(input, 'messages') AS input,
-        json_get_str((captured_output -> 0), 'content') as ideal
-      FROM runtime.task_history
-      WHERE task='ai_completion'
-
-  - name: latest_eval_runs
-    sql: |
-      SELECT model, MAX(created_at) as latest_run
-        FROM eval.runs
-        GROUP BY model
-
-  - name: model_stats
-    sql: |
-      SELECT 
-        r.model,
-        COUNT(*) as total_queries,
-        SUM(CASE WHEN res.value = 1.0 THEN 1 ELSE 0 END) as correct_answers,
-        AVG(res.value) as accuracy
-      FROM eval.runs r
-      JOIN latest_eval_runs lr ON r.model = lr.model AND r.created_at = lr.latest_run
-      JOIN eval.results res ON res.run_id = r.id
-      GROUP BY r.model
-
-evals:
-  - name: mimic-user-queries
-    description: |
-      Evaluates how well a model can copy the exact answers already returned to a user. Useful for testing if a smaller/cheaper model is sufficient.
-    dataset: user_queries
-    scorers:
-      - match
-
 models:
-  - name: gpt-4o
-    from: openai:gpt-4o
+  - name: gpt-5.4
+    from: openai:gpt-5.4
     params:
       openai_api_key: ${ secrets:SPICE_OPENAI_API_KEY }
 
